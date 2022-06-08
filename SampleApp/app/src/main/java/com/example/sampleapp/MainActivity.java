@@ -4,8 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.FrameLayout;
 
-import com.microsoft.maps.MapRenderMode;
 import com.microsoft.maps.MapView;
+import com.microsoft.maps.MapRenderMode;
 
 public class MainActivity extends AppCompatActivity {
     private MapView mMapView;
@@ -14,10 +14,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mMapView = new MapView(this, MapRenderMode.VECTOR);  // or use MapRenderMode.RASTER for 2D map
+        mMapView = new MapView(this, MapRenderMode.VECTOR);
         mMapView.setCredentialsKey(BuildConfig.CREDENTIALS_KEY);
         ((FrameLayout)findViewById(R.id.map_view)).addView(mMapView);
         mMapView.onCreate(savedInstanceState);
+
     }
 }
 
